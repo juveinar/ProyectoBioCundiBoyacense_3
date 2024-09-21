@@ -1,0 +1,180 @@
+
+  
+.navbar-nav .nav-link:hover {
+    background-color: #536aee; /* color fondo cuando el cursor pasa por encima*/
+    color: #333;  /*color fuente cuando el cursor pasa por encima*/
+  }
+
+ .navbar {
+  height: 50px; /* Ajusta la altura a lo que necesites */
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
+
+
+.navbar .logo img {
+  height: 50px; /* Ajusta el tamaño del logo */
+  margin: 5px 0; /* Centra el logotipo verticalmente */
+}
+
+/*   
+    .logo {
+    float: left;
+    margin-right: 10px;
+    
+  }
+  
+    .logo img {
+    width: 20%;
+      }
+*/
+
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40 !important; /* Asegura el color de fondo del menú colapsado */
+  }
+}
+
+
+
+      body {
+       
+        padding-top: 56px; /* Ajusta este valor a la altura de tu navbar */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #373B44;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             
+    }
+    
+
+    .container {
+        margin-top: 10px;
+        
+      }
+      
+    .row {
+        background-color: #e9ecef;
+        margin-bottom: 0px;
+        border: none;  /* Elimina el borde */
+        border-bottom: 1px solid transparent; /* Alternativa: hace el borde inferior transparente */
+      }
+    
+       
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    main {
+        flex: 1;
+        padding: 20px;
+    }
+    footer {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-links li {
+        display: inline;
+        margin: 0 10px;
+    }
+    .footer-links a {
+        color: rgb(63, 63, 237);
+        text-decoration: none;
+    }
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+    
+    .col-md-6,.col-md-7 ,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{
+        background-color: #e9ecef;
+        /*border: 0px solid #dee2e6;*/
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+
+
+/* Titulo BIODIVERSIDAD CUNDIBOYACENSE */ 
+      .titulo{
+        background-image: url('../img/bosque1.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        font-weight: bold;
+        /*margin-top: 50px;  Ajusta el valor según el alto del navbar */
+      }
+
+
+      .imagen2 img{
+       
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: bottom;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra suave alrededor de la imagen */
+        border-radius: 15px; /* Bordes redondeados */      
+        /*position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        height: 83%;
+
+        transform: translate(-50%, -50%);
+       /* object-fit: cover;  Ajusta la imagen para que cubra todo el contenedor */
+       /*display: flex;  Activa Flexbox */
+       /*align-items: center;  Alinea el contenido verticalmente en el centro */
+       /* justify-content: center; Alinea el contenido horizontalmente en el centro */
+       
+      }
+
+
+.parrafo1 {
+  text-align: justify;
+  font-size: 16px;
+}
+
+.fuentes {
+  text-align: left;
+  font-size: 14px;
+}
+
+
+.list-group {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.text-overlay {
+  position: absolute;
+  bottom: 22px; /* Ajusta la distancia desde la parte inferior */
+  right: 18px;  /* Ajusta la distancia desde la parte derecha */
+  color: white;
+  font-size: 12px; /* Tamaño pequeño del texto */
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente*/
+  padding: 1px 4px; /* Espaciado alrededor del texto */
+  border-radius: 3px; /* Esquinas redondeadas */
+}
+
+
+#map {
+  height: 600px;
+  width: 100%;
+}
+

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioCundiBoyacense</title>
+  <link rel="icon" href="bio.ico" type="image/x-icon">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesesp.css') }}">
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='images/Logo-1.png') }}" alt="logo" />
+        </div>
+    
+        <a class="navbar-brand" href='/'>Bio CundiBoyacense</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href='/'>Inicio <span class="sr-only">(current)</span></a>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFun" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Fundaciones
+              </a>
+    
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownFun">
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}">FUNDACION MONTECITO</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#CORPOBOYACA">CORPOBOYACA</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#FUNDACION RED DE ARBOLES">FUNDACION RED DE
+                  ARBOLES</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#BIOPARQUE LA RESERVA COTA">BIOPARQUE LA
+                  RESERVA COTA</a>
+              </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEco" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Ecosistemas
+              </a>
+    
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEco">
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}">Páramos</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#BOSQUES">Bosques</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#HUMEDALES">Humedales</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#RIOS">Ríos</a>
+              </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownEsp" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Especies
+              </a>
+    
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEsp">
+                <a class="dropdown-item" href="{{ url_for('especies') }}">MAMIFEROS</a>
+                <a class="dropdown-item" href="{{ url_for('especies') }}#aves">AVES</a>
+              </div>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href='/#map'>Mapa interactivo</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/estadistica">Estadisticas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/conocenos">Conocenos</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- fin navbar-->
+
+
+    <div class="row">
+      <div class="col-md-12 titulo">BIODIVERSIDAD CUNDIBOYACENSE </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="col-md-12 ">
+          <hr>
+          <h1><strong> Especies </strong></h1>
+          <hr>
+        </div>
+        <section class="especies-section">
+          <br>
+          <p>Cundinamarca cuenta con 15.480 especies y Boyaca con 11.731 especies</p>
+
+          <div class="texto-mamifero">
+            <h4 id="mamiferos">MAMIFEROS</h4>
+            <p class="txt-mamifero">
+              Los mamíferos pertenecen al grupo de los vertebrados.
+              Se caracterizan por tener el cuerpo cubierto de pelaje, por nacer del vientre materno
+              (vivíparos) y por alimentar a las crias con leche por medio de glándulas mamarias.
+              Los mamíferos son animales de sangre caliente, es decir, que son capaces
+              de regular la temperatura de su cuerpo para que se mantenga constante independientemente
+              de que haga frío o calor, y respiran a través de pulmones.
+              <br>
+              <br>
+              Dentro de los mamiferos mas caracteristicos que encontramos en el territorio CundiBoyacense esta
+              (El tigrillo, Oso tamandua, Oso marteja, Oso andino, Oso hormiguero, Armadillo, Nutria del rio, Borugo,
+              Mono
+              Aullador entre otras.)
+            </p>
+          </div>
+
+          <div class="mosaico1">
+            <div class="mosaico-mamiferos">
+              <img src="{{ url_for('static', filename='images/ESPECIES/oso andino.jpeg') }}" alt="">
+            </div>
+            <div class="mosaico-mamiferos">
+              <img src="{{ url_for('static', filename='images/ESPECIES/Armadillo.jpeg') }}" alt="">
+            </div>
+            <div class="mosaico-mamiferos">
+              <img src="{{ url_for('static', filename='images/ESPECIES/aullador.jpeg') }}" alt="">
+            </div>
+            <div class="mosaico-mamiferos">
+              <img src="{{ url_for('static', filename='images/ESPECIES/hormiguero.jpeg') }}" alt="">
+            </div>
+            <div class="mosaico-mamiferos">
+              <img src="{{ url_for('static', filename='images/ESPECIES/Nutria.jpeg') }}" alt="">
+            </div>
+            <div class="mosaico-mamiferos">
+              <img src="{{ url_for('static', filename='images/ESPECIES/Tigrillo.jpeg') }}" alt="">
+            </div>
+            <div class="mosaico-mamiferos">
+              <img src="{{ url_for('static', filename='images/ESPECIES/borugo.jpg') }}">
+            </div>
+          </div>
+
+          <div>
+            <hr>
+            <h4 id="aves">AVES</h4>
+            <hr>
+            <p class="txt-aves">
+              Las aves son animales vertebrados, de sangre caliente, que caminan, saltan o se mantienen
+              solo sobre las extremidades posteriores, mientras que las extremidades anteriores están
+              modificadas como alas que, al igual que muchas otras características anatómicas únicas,
+              son adaptaciones para volar.
+              <br>
+              Acontinuacion vas a poder ver las aves mas caracteristicas.
+            </p>
+          </div>
+
+          <div class="galeria">
+            <div class="foto">
+              <img src="{{ url_for('static', filename='images/ESPECIES/pajaro azul.jpg') }}" alt="">
+            </div>
+            <div class="pie">
+              <a href="https://ecuador.inaturalist.org/taxa/72792-Dacnis-hartlaubi" target="_blank">
+                <p>Dacnis hartlaubi</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="galeria">
+            <div class="foto">
+              <img src="{{ url_for('static', filename='images/ESPECIES/gallina.jpg') }}" alt="">
+            </div>
+            <div class="pie">
+              <a href="https://colombia.inaturalist.org/taxa/2050-Crax-alberti" target="_blank">
+                <p>crax alberti</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="galeria">
+            <div class="foto">
+              <img src="{{ url_for('static', filename='images/ESPECIES/buho.jpeg') }}" alt="">
+            </div>
+            <div class="pie">
+              <A href="https://colombia.inaturalist.org/taxa/19788-Megascops-choliba" target="_blank">
+                <p>Megascops choliba </p>
+              </A>
+            </div>
+          </div>
+
+          <div class="galeria">
+            <div class="foto">
+              <img src="{{ url_for('static', filename='images/ESPECIES/pajarito.jpeg') }}" alt="">
+            </div>
+            <div class="pie">
+              <a href="https://spain.inaturalist.org/taxa/19627-Nyctidromus-albicollis" target="_blank">
+                <p>Nyctidromus albicollis</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="anfibios">
+            <hr>
+ 
+
+    <div class="row">
+      <div class="col-md-12"></div>
+    </div>
+
+    <!-- footer -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; 2024 www.Bio_CundiBoyacense.com</p>
+        <ul class="footer-links">
+          <li><a href='/'>Inicio</a></li>
+          <li><a href="#">biocb@facebook.com</a></li>
+          <li><a href="#">biocb@instagram.com</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div> <!-- fin container -->
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

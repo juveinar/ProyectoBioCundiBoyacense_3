@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioCundiBoyacense</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/bio.ico') }}" type="image/x-icon" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Incluyendo Leaflet CSS -->
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='images/Logo-1.png') }}" alt="logo" />
+        </div>
+
+        <a class="navbar-brand" href='/'>Bio CundiBoyacense</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href='/'>Inicio <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFun" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Fundaciones
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownFun">
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}">FUNDACION MONTECITO</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#CORPOBOYACA">CORPOBOYACA</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#FUNDACION RED DE ARBOLES">FUNDACION RED DE
+                  ARBOLES</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#BIOPARQUE LA RESERVA COTA">BIOPARQUE LA
+                  RESERVA COTA</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEco" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Ecosistemas
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEco">
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}">Páramos</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#BOSQUES">Bosques</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#HUMEDALES">Humedales</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#RIOS">Ríos</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEsp" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Especies
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEsp">
+                <a class="dropdown-item" href="{{ url_for('especies') }}">MAMIFEROS</a>
+                <a class="dropdown-item" href="{{ url_for('especies') }}#aves">AVES</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href='/#map'>Mapa interactivo</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/estadistica">Estadisticas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/conocenos">Conocenos</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- fin navbar-->
+
+
+    <div class="row"  >
+      <div class="col-md-12 titulo">BIODIVERSIDAD CUNDIBOYACENSE</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        ¡Bienvenido a Biodiversidad CundiBoyacense, donde la naturaleza cobra
+        vida y cada especie cuenta!
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12"></div>
+      <div class="col-md-5 parrafo1">
+        <p>
+          <strong>Explorando la Riqueza Natural de Boyacá y Cundinamarca</strong><br /><br />
+          Descubre la fascinante diversidad biológica que albergan los
+          departamentos de Boyacá y Cundinamarca, ubicadas en el corazón de
+          los Andes colombianos. Nuestro portal web se dedica a explorar y
+          compartir la impresionante variedad de flora y fauna que habita en
+          estos territorios, destacando su importancia ecológica, cultural y
+          económica.<br /><br />
+          Ya seas un estudiante, un investigador, un ecoturista o simplemente
+          un amante de la naturaleza, encontrarás en nuestro portal
+          información valiosa y actualizada que te ayudará a comprender la
+          complejidad y la belleza de la biodiversidad de Boyacá y
+          Cundinamarca.
+        </p>
+        <br />
+      </div>
+
+      <div class="col-md-4 imagen2">
+        <br /><img src="{{ url_for('static', filename='images/saltot.jpg') }}" alt="imagen2" />
+        <div class="text-overlay">Salto del Tequendama @baquianos</div>
+      </div>
+
+      <div class="col-md-3">
+        <p><strong>Últimas noticias</strong></p>
+        <div class="list-group">
+          <a href="https://www.cundinamarca.gov.co/noticias/la-proteccion-del-agua-es-una-prioridad-en-cundinamarca"
+            class="list-group-item list-group-item-action" target="_blank">
+            La protección del agua es una prioridad en Cundinamarca...
+          </a>
+          <a href="https://www.elespectador.com/colombia/mas-regiones/boyaca-cundinamarca-norte-de-santander-y-santander-invierten-en-proteccion-de-sus-paramos-noticias-hoy/"
+            class="list-group-item list-group-item-action" target="_blank">
+            Gobernadores de la región Centro apuestan por la protección
+            conjunta de los páramos...
+          </a>
+          <a href="https://www.revistaecoguia.com/secciones/vision/4063-un-corredor-de-paramos-que-si-tiene-quien-lo-cuide"
+            class="list-group-item list-group-item-action" target="_blank">
+            Un corredor de páramos que sí tiene quien lo cuide...
+          </a>
+          <a href="https://www.elespectador.com/ambiente/denuncian-que-cientos-de-frailejones-fueron-talados-en-boyaca/"
+            class="list-group-item list-group-item-action" target="_blank">
+            Denuncian que cientos de frailejones fueron talados en Boyacá...
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12"> </div>
+    </div>
+ 
+    
+    <div class="row">
+      <div class="col-md-8">
+        <p class="parrafo1">
+          <strong>11 de septiembre: Día Nacional de la Biodiversidad en
+            Colombia</strong>
+        </p>
+        <img src="{{ url_for('static', filename='images/images.png') }}" alt="images" />
+        <p class="parrafo1">
+          El <strong>Día Nacional de la Biodiversidad </strong>se celebra para
+          recordar al Sabio José Celestino Mutis, quien murió el 11 de
+          septiembre de 1808 y quien con la Expedición Botánica dejó una
+          significativa colección de plantas que son una notable base para el
+          inventario nacional de biodiversidad.<br /><br />
+          La biodiversidad comprende los distintos tipos de vida que se pueden
+          encontrar en un área: la variedad de animales, plantas, hongos e
+          incluso microorganismos como bacterias que conforman nuestro mundo
+          natural. Cada una de estas especies y organismos trabajan
+          conjuntamente en los ecosistemas -como una red- manteniendo el
+          equilibrio y la vida.<br /><br />
+          Es por esto que les queremos contar que la Universidad Distrital
+          alberga <strong>más de 14 especies de aves</strong> residentes y
+          migratorias boreales, innumerables especies de insectos y cuenta con
+          un patrimonio forestal de
+          <strong>más de 2.100 especies entre arbustos, árboles y palmas.</strong><br /><br />
+          Así mismo, desde el Sistema de Gestión Ambiental se han realizado
+          actividades como siembras de árboles, limpieza de cuerpos hídricos,
+          actividades de sensibilización y educación junto con diferentes
+          integrantes de la comunidad universitaria, todo en pro de cuidar la
+          biodiversidad con la que cuentan las diferentes sedes de la
+          Universidad.
+          <br /><br />
+        </p>
+
+        <p class="fuentes">
+          Fuentes:<br />
+          https://www.worldwildlife.org/descubre-wwf/historias/que-es-la-biodiversidad<br />
+          https://www.minambiente.gov.co/index.php/component/content/article?id=930:el-uso-soste<br />
+        </p>
+        <br /><br />
+      </div>
+     
+        
+      <div class="col-md-4"><p><strong>widget Meteorologica</strong></p>
+
+        <div id="openweathermap-widget-5"></div>
+          <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 5,cityid: '3688689',appid: 'f86a587487d6bd7471b9385ced1a35e4',units: 'metric',containerid: 'openweathermap-widget-5',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+        <br>
+<!-- 
+      <div id="openweathermap-widget-1" ></div>
+      <script src="//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js"></script>
+      <script>
+        window.myWidgetParam
+          ? window.myWidgetParam
+          : (window.myWidgetParam = []);
+        window.myWidgetParam.push({
+          id: 1,
+          cityid: "3688689",
+          appid: "f86a587487d6bd7471b9385ced1a35e4",
+          units: "metric",
+          containerid: "openweathermap-widget-1",
+        });
+        (function () {
+          var script = document.createElement("script");
+          script.async = true;
+          script.charset = "utf-8";
+          script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(script, s);
+        })();
+      </script>
+-->    
+      
+      <div >
+        <p><strong>App Meteorologica</strong></p>
+        <form method="post">
+          <label for="city">Ingrese su Ciudad:</label>
+          <input type="text" id="city" name="city" required />
+          <button type="submit">Obtener</button>
+        </form>
+      </div>
+      {% if weather %}
+      <div class="weather">
+        <h2>Weather in {{ weather.name }}</h2>
+        <p>Temperature: {{ weather.main.temp }}°C</p>
+        <p>Weather: {{ weather.weather[0].description }}</p>
+      </div>
+       {% endif %}
+    </div>
+  </div>
+    
+
+ 
+    
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Mapa Interactivo</h1>
+      </div>
+
+      <div id="map"></div>
+
+      <!-- Incluyendo Leaflet JS -->
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+      <!-- JavaScript personalizado -->
+      <script>
+        // Inicializando el mapa y estableciendo la vista inicial en Cundinamarca, Colombia
+        var map = L.map("map").setView([4.85, -73.95], 8);
+
+        // Añadiendo una capa de mapa de OpenStreetMap
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        // Función para hacer zoom al marcador al hacer clic
+        function onMarkerClick(e) {
+          map.setView(e.latlng, 15);
+        }
+
+        // Función para mantener el popup abierto por un breve período después de que el cursor sale del marcador
+        function onMarkerMouseOut(e) {
+          var marker = this;
+          setTimeout(function () {
+            if (!marker.isPopupOpen()) {
+              marker.closePopup();
+            }
+          }, 500); // Espera 500ms antes de cerrar el popup
+        }
+
+        // Función para mostrar información al pasar el cursor sobre el marcador
+        function onMarkerMouseOver(e) {
+          this.openPopup();
+        }
+
+        // Añadiendo marcadores en las localidades especificadas
+        var markers = [
+          {
+            coords: [5.647, -73.472],
+            popup:
+              '<b>Páramo Iguaque – Merchán</b><br><a href="/ecosistemas#paramo_iguaque" target="_blank">Más información</a>',
+          },
+          {
+            coords: [5.298, -73.513],
+            popup:
+              '<b>Páramo Rabanal – Río Bogotá</b><br><a href="/ecosistemas#paramo_rabanal" target="_blank">Más información</a>',
+          },
+          {
+            coords: [5.758, -72.991],
+            popup:
+              '<b>Páramo Guantiva – La Rusia</b><br><a href="/ecosistemas#paramo_guantiva" target="_blank">Más información</a>',
+          },
+          {
+            coords: [5.48, -73.133],
+            popup:
+              '<b>Páramo Tota-Bijagual-Mamapacha</b><br><a href="/ecosistemas#paramo_tota" target="_blank">Más información</a>',
+          },
+
+          {
+            coords: [4.182, -74.231],
+            popup:
+              '<b>Humedales en Páramo de Sumapaz</b><br><a href="/ecosistemas#humedal_sumapaz" target="_blank">Más información</a>',
+          },
+          {
+            coords: [5.462, -73.756],
+            popup:
+              '<b>Laguna de Fúquene</b><br><a href="/ecosistemas#humedal_fuquene" target="_blank">Más información</a>',
+          },
+          {
+            coords: [5.551, -72.917],
+            popup:
+              '<b>Lago de Tota</b><br><a href="/ecosistemas#humedal_tota" target="_blank">Más información</a>',
+          },
+          {
+            coords: [5.651, -73.022],
+            popup:
+              '<b>Laguna de Sochagota</b><br><a href="/ecosistemas#humedal_sochagota" target="_blank">Más información</a>',
+          },
+
+          {
+            coords: [6.597, -72.636],
+            popup:
+              '<b>Río Chicamocha</b><br><a href="/ecosistemas#rio_iguaque" target="_blank">Más información</a>',
+          },
+          {
+            coords: [6.222, -73.135],
+            popup:
+              '<b>Río Suárez</b><br><a href="/ecosistemas#rio_suarez" target="_blank">Más información</a>',
+          },
+          {
+            coords: [5.15, -73.868],
+            popup:
+              '<b>Río Neusa</b><br><a href="/ecosistemas#rio_neusa" target="_blank">Más información</a>',
+          },
+        ];
+
+        markers.forEach(function (marker) {
+          var m = L.marker(marker.coords).addTo(map).bindPopup(marker.popup);
+          m.on("click", onMarkerClick);
+          m.on("mouseover", onMarkerMouseOver);
+          m.on("mouseout", onMarkerMouseOut);
+        });
+      </script>
+    </div>
+
+<!-- footer -->
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; 2024 www.Bio_CundiBoyacense.com</p>
+        <ul class="footer-links">
+          <li><a href='/'>Inicio</a></li>
+          <li><a href="#">biocb@facebook.com</a></li>
+          <li><a href="#">biocb@instagram.com</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <!-- fin container -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

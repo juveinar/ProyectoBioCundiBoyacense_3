@@ -1,0 +1,215 @@
+
+  
+.navbar-nav .nav-link:hover {
+  background-color: #536aee; /* color fondo cuando el cursor pasa por encima*/
+  color: #333;  /*color fuente cuando el cursor pasa por encima*/
+}
+
+.navbar {
+height: 50px; /* Ajusta la altura a lo que necesites */
+padding-top: 0;
+padding-bottom: 0;
+
+}
+
+
+.navbar .logo img {
+height: 50px; /* Ajusta el tamaño del logo */
+margin: 5px 0; /* Centra el logotipo verticalmente */
+}
+
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40 !important; /* Asegura el color de fondo del menú colapsado */
+  }
+  }
+
+
+
+
+    body {
+     /*  background-color: #83a4d4; */
+      padding-top: 56px; /* Ajusta este valor a la altura de tu navbar */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #373B44;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to top, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to top, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  
+    
+  }
+  
+  .container {
+      margin-top: 10px;
+      
+    }
+    
+  .row {
+      background-color: #e9ecef;
+      margin-bottom: 0px;
+      border: none;  /* Elimina el borde */
+      border-bottom: 1px solid transparent; /* Alternativa: hace el borde inferior transparente */
+    }
+  
+  
+  header {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+  }
+  main {
+      flex: 1;
+      padding: 20px;
+  }
+  footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+  }
+  .footer-links {
+      list-style: none;
+      padding: 0;
+  }
+  .footer-links li {
+      display: inline;
+      margin: 0 10px;
+  }
+  .footer-links a {
+      color: rgb(63, 63, 237);
+      text-decoration: none;
+  }
+  .footer-links a:hover {
+      text-decoration: underline;
+  }
+  
+  .col-md-6,.col-md-7 ,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{
+      background-color: #e9ecef;
+      /*border: 0px solid #dee2e6;*/
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2em;
+      
+    }
+
+
+
+    .titulo{
+      background-image: url('../img/bosque1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-weight: bold;
+      /*margin-top: 50px;  Ajusta el valor según el alto del navbar */
+    }
+
+   
+
+
+h1 {
+  text-align: center;
+}
+
+.mosaico1{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.mosaico1{
+max-width: 400px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 200px;
+grid-gap: 15px;
+padding: 60px 0;
+}
+
+.mosaico-mamiferos img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.mosaico-mamiferos:nth-child(1){
+grid-column-start: span 2;
+}
+
+.mosaico-mamiferos:nth-child(4){
+grid-column-start: span 2;
+}
+
+.txt-mamifero{
+text-align: left;
+border-width: 1px;
+border-style: solid;
+border-radius: 5%;
+padding: 2%;
+background: -webkit-linear-gradient(90deg,#bee4a0,#faf8ef); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(90deg,#bee4a0,#faf8ef); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+
+div.galeria{
+margin: 10px 20px;
+box-shadow: 0 4px 8px lightskyblue, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.galeria img{
+width: 30%;
+height: 50%;
+}
+
+div.galeria:hover{
+border: 1px solid lightcoral;
+transform: rotate(-3deg);
+}
+
+div.pie{
+text-align: center;
+text-shadow: 2px 2px 5px purple;
+padding: 10px;
+}
+
+.txt-aves{
+text-align: left;
+border-width: 1px;
+border-style: solid;
+border-radius: 5%;
+padding: 2%;
+}
+
+.anfibiosh4{
+width: 100%;
+height: auto;
+text-align: center;
+color: white;
+text-shadow: 1px 2px 2px black, 0 0 25px blue, 0 0 5px blue;
+}
+
+.especies-section {
+  background-color: #e9ecef;
+}
+
+
+.mapa-cundinamarca{
+padding: 2em 0;
+display: inline;
+background-color: #e9ecef;
+text-align: center;
+}
+
+.mapa-boyaca{
+padding: 2em 0;
+display: inline;
+background-color: #e9ecef;
+}
+
+.foto {
+  text-align: center;
+}

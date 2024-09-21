@@ -1,0 +1,214 @@
+
+  
+.navbar-nav .nav-link:hover {
+    background-color: #536aee; /* color fondo cuando el cursor pasa por encima*/
+    color: #333;  /*color fuente cuando el cursor pasa por encima*/
+  }
+
+ .navbar {
+  height: 50px; /* Ajusta la altura a lo que necesites */
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
+
+
+.navbar .logo img {
+  height: 50px; /* Ajusta el tamaño del logo */
+  margin: 5px 0; /* Centra el logotipo verticalmente */
+}
+
+/*   
+    .logo {
+    float: left;
+    margin-right: 10px;
+    
+  }
+  
+    .logo img {
+    width: 20%;
+      }
+*/
+
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40 !important; /* Asegura el color de fondo del menú colapsado */
+  }
+}
+
+
+/*
+    .container {
+        margin-top: 10px;
+        
+      }
+*/
+
+    .row {
+        background-color: #e9ecef;
+        margin-bottom: 0px;
+        border: none;  /* Elimina el borde */
+        border-bottom: 1px solid transparent; /* Alternativa: hace el borde inferior transparente */
+      }
+    
+    
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    main {
+        flex: 1;
+        padding: 20px;
+    }
+    footer {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-links li {
+        display: inline;
+        margin: 0 10px;
+    }
+    .footer-links a {
+        color: rgb(63, 63, 237);
+        text-decoration: none;
+    }
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+    
+    .col-md-6,.col-md-7 ,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{
+        background-color: #fff;
+        /*border: 0px solid #dee2e6;*/
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+
+
+      body {
+       
+        padding-top: 56px; /* Ajusta este valor a la altura de tu navbar */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #373B44;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             
+    }
+
+
+
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-bottom: 1px solid #c0bfbf;
+    }
+    .profile img {
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    .profile-info {
+        flex-grow: 1;
+    }
+    .profile-info h2 {
+        margin: 0;
+        color: #333;
+    }
+    .profile-info p {
+        margin: 5px 0;
+        color: #666;
+    }
+
+
+
+    .logotalentot img {
+        
+        width: 20%;
+        height: auto;
+        object-fit: cover; /* Ajusta la imagen para que se adapte al cuadro */
+       
+    }
+
+    div.logotalentot {
+        background-color: #30689c;
+        text-align: center;
+    }
+
+
+ /* estilo formulario */   
+    .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+        background: #aedbf5;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .contact-form h2 {
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-group textarea {
+        resize: vertical;
+        height: 150px;
+    }
+    .form-group button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .form-group button:hover {
+        background-color: #0056b3;
+    }
+
+    .mensajeOK {
+        color: green;
+    }
+
+
+    /* fin estilo formulario */   

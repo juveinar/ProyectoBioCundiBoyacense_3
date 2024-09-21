@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioCundiBoyacense</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/bio.ico') }}" type="image/x-icon" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesestadistica.css') }}" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Incluyendo Leaflet CSS -->
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='images/Logo-1.png') }}" alt="logo" />
+        </div>
+
+        <a class="navbar-brand" href='/'>Bio CundiBoyacense</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href='/'>Inicio <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFun" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Fundaciones
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownFun">
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}">FUNDACION MONTECITO</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#CORPOBOYACA">CORPOBOYACA</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#FUNDACION RED DE ARBOLES">FUNDACION RED DE
+                  ARBOLES</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#BIOPARQUE LA RESERVA COTA">BIOPARQUE LA
+                  RESERVA COTA</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEco" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Ecosistemas
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEco">
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}">Páramos</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#BOSQUES">Bosques</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#HUMEDALES">Humedales</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#RIOS">Ríos</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEsp" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Especies
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEsp">
+                <a class="dropdown-item" href="{{ url_for('especies') }}">MAMIFEROS</a>
+                <a class="dropdown-item" href="{{ url_for('especies') }}#aves">AVES</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href='/#map'>Mapa interactivo</a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/estadistica">Estadisticas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/conocenos">Conocenos</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- fin navbar-->
+
+
+    <div class="row"  >
+      <div class="col-md-12 titulo">BIODIVERSIDAD CUNDIBOYACENSE</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong>Datos Estadísticos Sobre Biodiversidad - Departamentos Cundinamarca y Boyaca</strong></p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 datos">
+            <h3>Conteo de Especies por Departamento</h3>
+            <ul>
+                {% for departamento, conteo in conteo_departamento.items() %}
+                    <li>{{ departamento }}: {{ conteo }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        
+        <div class="col-md-12 datos">
+            <h3>Especies Únicas Registradas</h3>
+            <p>Total: {{ especies_unicas }}</p>
+            <ul>
+                {% for especie in lista_especies_unicas %}
+                    <li>{{ especie }}</li>
+                {% endfor %}
+            </ul>           
+        </div>
+
+        <div class="col-md-12 datos">
+            <h3>Promedio de Latitud y Longitud de Observaciones</h3>
+            <p>Latitud Promedio: {{ promedio_latitud }}</p>
+            <p>Longitud Promedio: {{ promedio_longitud }}</p>          
+        </div>
+
+        <div class="col-md-12 datos" >
+            <h3>Gráfico de Distribución de las Principales Especies</h3>
+            <img class="grafico" src="{{ url_for('static', filename='images/grafico_distribucion_especies.png') }}" alt="Gráfico de distribución de especies">
+        </div>
+
+        <div class="col-md-12 datos" >
+            <h3>Gráfico de Distribución Observaciones hechas por Departamento</h3>
+            <img class="grafico" src="{{ url_for('static', filename='images/grafico_pie_departamento.png') }}" alt="Gráfico de pie de distribución por departamento">
+        </div>
+
+        <br/>
+    </div>
+<!-- footer -->
+    <div class="row">
+        <div class="col-md-12">
+        <p>&copy; 2024 www.Bio_CundiBoyacense.com</p>
+        <ul class="footer-links">
+        <li><a href='/'>Inicio</a></li>
+        <li><a href="#">biocb@facebook.com</a></li>
+        <li><a href="#">biocb@instagram.com</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        </ul>
+        </div>
+     </div>
+
+</div>
+<!-- fin container -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioCundiBoyacense</title>
+  <link rel="icon" href="bio.ico" type="image/x-icon">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleseco.css') }}">
+</head>
+
+<body>
+
+  <div class="container">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/Logo-1.png') }}" alt="logo" />
+    </div>
+
+    <a class="navbar-brand" href='/'>Bio CundiBoyacense</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href='/'>Inicio <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFun" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Fundaciones
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownFun">
+            <a class="dropdown-item" href="{{ url_for('fundaciones') }}">FUNDACION MONTECITO</a>
+            <a class="dropdown-item" href="{{ url_for('fundaciones') }}#CORPOBOYACA">CORPOBOYACA</a>
+            <a class="dropdown-item" href="{{ url_for('fundaciones') }}#FUNDACION RED DE ARBOLES">FUNDACION RED DE
+              ARBOLES</a>
+            <a class="dropdown-item" href="{{ url_for('fundaciones') }}#BIOPARQUE LA RESERVA COTA">BIOPARQUE LA
+              RESERVA COTA</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownEco" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Ecosistemas
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownEco">
+            <a class="dropdown-item" href="{{ url_for('ecosistemas') }}">Páramos</a>
+            <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#BOSQUES">Bosques</a>
+            <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#HUMEDALES">Humedales</a>
+            <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#RIOS">Ríos</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEsp" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Especies
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownEsp">
+            <a class="dropdown-item" href="{{ url_for('especies') }}">MAMIFEROS</a>
+            <a class="dropdown-item" href="{{ url_for('especies') }}#aves">AVES</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href='/#map'>Mapa interactivo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/estadistica">Estadisticas</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/conocenos">Conocenos</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- fin navbar-->
+
+
+    <div class="row">
+      <div class="col-md-12 titulo">BIODIVERSIDAD CUNDIBOYACENSE </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12 "><strong>
+          <h2> PARAMOS </h2>
+        </strong> </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <p class="parrafo1">Es el ecosistema más característico de la región, ubicado en las zonas montañosas por encima
+          de los 3.000 metros de altitud. Se caracteriza por su vegetación frailejona, lagunas de altura y una gran
+          variedad de fauna, como el oso de anteojos, el cóndor y el frailejón.</p>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="textleft subtitulo"><strong>Páramo Altiplano Cundiboyacense</strong></p><br>
+        <p class="parrafo1"> El Páramo Altiplano Cundiboyacense es un complejo de páramos ubicado en la Cordillera
+          Oriental de los Andes colombianos, entre los departamentos de Cundinamarca y Boyacá. Este ecosistema es uno de
+          los más importantes del país, ya que alberga una gran diversidad de flora y fauna, y es fuente de agua para
+          millones de personas. </p>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-8 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo-Altiplano.png') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-2"></div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12" id="paramo_iguaque">
+        <p class="textleft subtitulo"><strong>Páramo Iguaque – Merchán</strong></p><br>
+        <p class="parrafo1"> El Páramo Iguaque – Merchán es un complejo de páramos ubicado en la Cordillera Oriental de
+          Colombia, entre los
+          departamentos de Boyacá y Cundinamarca. Es un ecosistema de gran importancia para la biodiversidad y la
+          regulación hídrica del país.<br>
+
+          El páramo alberga una gran variedad de flora y fauna, incluyendo frailejones, chusques, ranas de cristal, osos
+          de anteojos y pumas. Es una fuente importante de agua para millones de personas, y también es importante para
+          la regulación del clima y la prevención de desastres naturales.<br>
+
+          El Páramo Iguaque – Merchán se encuentra a 202 km de Bogotá, y se puede llegar en auto en aproximadamente 4
+          horas y 13 minutos.</p>
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramoiguaque.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramao_Iguaque-Merchan.png') }}" alt="paramo_altiplano"
+          class="imginteractivo"></div>
+      <div class="col-md-12"> </div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12 id="paramo_rabanal">
+        <p class="textleft subtitulo"><strong>Páramo Rabanal – Río Bogotá</strong></p><br>
+        <p class="parrafo1"> Este ecosistema provee de agua a más de 400.000 colombianos y además alimenta una
+          hidroeléctrica que genera el 8% de la energía del país.<br>
+          El Río Bogotá nace en el Páramo Rabanal y recorre 380 kilómetros antes de desembocar en el Río Magdalena.
+        </p>
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo_rabanal.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo_rabanal2.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-12"> </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" id="paramo_guantivia">
+        <p class="textleft subtitulo"><strong>Páramo Guantiva – La Rusia</strong></p><br>
+        <p class="parrafo1"> fue delimitado en 2018, es tal vez uno de los ecosistemas más conservados del país. Allí,
+          la frontera agrícola no es tan alta, no hay actividades de minería y los cultivos y pastizales para el ganado
+          están concentrados cerca a la vía que comunica a Boyacá con los Santanderes. Es un ecosistema con un enorme
+          potencial en términos de biodiversidad”.<br>
+          Estudios del Instituto Humboldt revelan que este páramo cuenta con 85 lagunas y humedales y cerca de 2.300
+          drenajes que se encargan de alimentar a titanes hídricos como los ríos Chicamocha, Fonce y Suárez. También
+          alberga más de 960 especies de plantas, mamíferos, aves, anfibios e invertebrados.<br>
+
+          “En este páramo está el mayor parche de bosques de colorados o siete cueros de la especie Polylepis quadrijuga
+          en el país, el único árbol que habita en los ecosistemas paramunos. También resguarda la mayor cantidad de
+          robles en todo el territorio nacional. Otra de sus joyas biodiversas es una gran variedad de frailejones”,
+          informó Amaya.
+        </p>
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo_guantivia.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo_guantivia2.jpg') }}" alt="paramo_altiplano"
+          class="imginteractivo"></div>
+      <div class="col-md-12"> </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" id="paramo_tota">
+        <p class="textleft subtitulo" ><strong>Páramo Tota-Bijagual-Mamapacha</strong></p><br>
+        <p class="parrafo1"> Se encuentra ubicado en la cordillera oriental de Colombia, entre los departamentos de
+          Boyacá y Casanare.<br>
+          Tota-Bijagual-Mamapacha, se encuentra ubicado en la cordillera oriental, entre los departamentos de Boyacá y
+          Casanare. Se
+          distribuye entre los 3100 y 4000m de altura, y es de particular importancia porque abastece a
+          varios acueductos rurales y de centros urbanos como Sogamoso, Duitama, Paipa, Tunja y
+          Yopal. En el tienen jurisdicción las Corporaciones Autónomas Regionales CORPOCHIVOR, CORPOBOYACA y
+          CORPORINOQUIA.
+        </p>
+      </div>
+      <div class="col-md-4 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo_tota.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-4 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo_tota2.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-4 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/paramo_tota3.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-12"> </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12" id="paramo_pisba">
+        <p class="textleft subtitulo"><strong>Páramo de Pisba</strong></p><br>
+        <p class="parrafo1"> Tiene una localización estratégica ya que es el punto de nacimiento de importantes ríos,
+          quebradas y Lagunas. Constituye un área representativa de los ecosistemas de páramo, subpáramo y bosque
+          altoandino del nororiente de Boyacá conformando el llamado corredor Biológico Tota-Pisba-Cocuy.<br>
+
+          Posee elementos únicos y de gran relevancia que realzan su importancia en el contexto de la conservación de la
+          biodiversidad de la Cordillera Oriental, se encuentran especies endémicas de flora tan importantes a nivel
+          local y con amplia distribución a nivel nacional.<br>
+
+          En su interior nacen importantes lagunas de alta montaña que albergan una gran diversidad de fauna
+          (principalmente aves migratorias y nativas) y flora. Estos sitios son de gran importancia por constituirse
+          como los nacimientos de la red hídrica de la región<br>
+
+          Desde el punto de vista histórico, el Parque Nacional Natural Pisba se caracteriza por que al interior se
+          encuentra un trayecto del camino que le dio paso a la tropa libertadora hacia el interior del país, donde se
+          libró la Batalla del Puente de Boyacá y le dio la libertad a nuestro país.<br>
+        </p>
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/Paramo-de-Pisba.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/Paramo-de-Pisba2.jpg') }}" alt="paramo_altiplano" class="imginteractivo">
+      </div>
+      <div class="col-md-12"> </div>
+
+    </div>
+
+
+
+
+    <hr>
+
+
+    <div class="row" id="BOSQUES">
+      <div class="col-md-12"><strong>
+          <h2> BOSQUES </h2>
+        </strong> </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <p class="parrafo1">Los bosques de Boyacá y Cundinamarca se caracterizan por su gran diversidad, tanto en flora
+          como en fauna. Esto se debe a la variedad de climas y altitudes presentes en la región, que van desde los
+          páramos fríos y húmedos hasta los bosques secos tropicales.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="textleft subtitulo"><strong>Bosque altoandino</strong></p>
+      </div>
+      <div class="col-md-6">
+        <p class="textleft">El bosque altoandino cundiboyacense se caracteriza por su clima frío y húmedo, con
+          temperaturas promedio que oscilan entre los 10 y 15 grados Celsius. La precipitación anual es de alrededor de
+          1.000 a 2.000 milímetros.</p>
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/bosque-altoandino.jpg') }}" alt="bosque_altoandino"
+          class="imginteractivo">
+      </div>
+
+      <div class="col-md-12">
+        <p class="textleft">
+          <strong>Flora</strong><br><br>
+          La flora del bosque altoandino cundiboyacense está compuesta por una gran variedad de árboles, arbustos,
+          epífitas y hierbas. Algunas de las especies más comunes son:<br><br>
+          <strong>Árboles:</strong> El raque (Weinmannia pubescens), el encenillo (Myrica pubescens), el mortiño
+          (Vaccinium myrtillus),
+          el canelo (Drimys winteri), el romero (Rosmarinus officinalis), el aliso (Alnus jorullensis) y el sietecueros
+          (Escallonia micrantha).<br><br>
+          <strong>Arbustos:</strong> El frailejón (Espeletia spp.), la quina (Cinchona spp.), el laurel (Lauraceae spp.)
+          y el helecho
+          (Polypodiaceae spp.).<br><br>
+          <strong> Epífitas:</strong> Las orquídeas (Orchidaceae spp.), las bromelias (Bromeliaceae spp.) y los musgos
+          (Bryophyta
+          spp.).<br><br>
+          <strong>Hierbas:</strong> Las gramíneas (Poaceae spp.), las compuestas (Asteraceae spp.) y las gencianas
+          (Gentianaceae spp.).
+        </p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="textleft subtitulo"><strong>Bosque subandino cundiboyacense</strong></p>
+      </div>
+      <div class="col-md-6">
+        <p class="textleft">Es un ecosistema montano que se encuentra entre los 1.800 y 2.800 metros sobre el nivel del
+          mar en la Cordillera Oriental de los Andes colombianos. Este ecosistema se caracteriza por su alta
+          biodiversidad, con una gran variedad de plantas y animales. El bosque subandino cundiboyacense es también una
+          fuente importante de agua y servicios ambientales para las comunidades locales.</p>
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/bosque_subandino.jpg') }}" alt="bosque_subandino" class="imginteractivo">
+      </div>
+
+      <div class="col-md-12">
+        <p class="textleft">
+          <strong>Flora</strong><br><br>
+          La flora del bosque altoandino cundiboyacense está compuesta por una gran variedad de árboles, arbustos,
+          epífitas y hierbas. Algunas de las especies más comunes son:<br><br>
+          <strong>Árboles:</strong> El roble (Quercus humboldtii), el cedro (Cedrela odorata), el nogal (Juglans
+          neotropica), el guayacán (Tabebuia rosea), el yarumo (Cecropia peltata) y el laurel (Lauraceae spp.).<br><br>
+          <strong>Arbustos:</strong> El frailejón (Espeletia spp.), la quina (Cinchona spp.), el laurel (Lauraceae spp.)
+          y el helecho (Polypodiaceae spp.).<br><br>
+          <strong> Epífitas:</strong> Las orquídeas (Orchidaceae spp.), las bromelias (Bromeliaceae spp.) y los musgos
+          (Bryophyta spp.).<br><br>
+          <strong>Hierbas:</strong> Las gramíneas (Poaceae spp.), las compuestas (Asteraceae spp.) y las gencianas
+          (Gentianaceae spp.).
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="textleft subtitulo"><strong>Bosque seco tropical</strong></p>
+      </div>
+      <div class="col-md-6">
+        <p class="textleft">es un ecosistema único y frágil ubicado en el Valle del Magdalena y el Altiplano de Sumapaz,
+          en la Cordillera Oriental de los Andes colombianos. Este bosque se caracteriza por su clima cálido y seco, con
+          temperaturas promedio que oscilan entre los 18 y 32 grados Celsius (64 a 90 grados Fahrenheit) y una
+          precipitación anual que varía entre 800 y 1.500 milímetros (31 a 59 pulgadas).</p>
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/bosques-secotropical.jpeg') }}" alt="bosque_seco_tropical"
+          class="imginteractivo">
+      </div>
+
+      <div class="col-md-12">
+        <p class="textleft">
+          <strong>Flora</strong><br><br>
+          La flora del bosque altoandino cundiboyacense está compuesta por una gran variedad de árboles, arbustos,
+          epífitas y hierbas. Algunas de las especies más comunes son:<br><br>
+          <strong>Árboles:</strong> Guayacán (Tabebuia rosea), chaparro (Curatella americana), acacia (Acacia spp.) y
+          ceibo (Ceiba pentandra).<br><br>
+          <strong>Arbustos:</strong> Cadillo (Sida acuta), uña de gato (Uncaria tomentosa) y trompetilla (Citharexylum
+          spinosum).<br><br>
+          <strong>Cactáceas:</strong> Tuna (Opuntia spp.) y saguaro (Carnegiea gigantea).<br><br>
+          <strong>Pastos:</strong> Guinea (Panicum maximum) y jaragua (Hyparrhenia rufa).
+        </p>
+      </div>
+      <div class="col-md-12"> </div>
+      <div class="col-md-12"> </div>
+    </div>
+
+
+    <hr>
+
+
+    <div class="row" id="HUMEDALES">
+      <div class="col-md-12"><strong>
+          <h2> HUMEDALES </h2>
+        </strong> </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <p class="parrafo1">Cundinamarca y Boyaca cuentan con una gran variedad de humedales, desde pequeños humedales
+          urbanos hasta grandes complejos lacustres.</p>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 ">
+        <p><strong>Algunos humedales más importantes de Cundinamarca son: </strong></p><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 subtitulo"><strong>Complejo de humedales de la Sabana de Bogotá</strong></div>
+      <div class="col-md-4 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/hconejera.jpg') }}" alt="humedal_conejera" class="imginteractivo"></div>
+      <div class="col-md-4 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/hguaimaral.jpg') }}" alt="humedal_guaymaral" class="imginteractivo">
+      </div>
+      <div class="col-md-4 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/hcapellania.jpg') }}" alt="humedal_capellania" class="imginteractivo">
+      </div>
+      <div class="col-md-12">
+        <p class="textleft">Bogotá cuenta con una gran diversidad de humedales que a pesar de verse afectados y
+          convertidos en ecosistemas de riesgos han logrado persistir en el tiempo, ya que la desecación y malas
+          prácticas humanas en las que se encuentra: la contaminación, el desarrollo industrial, las economías
+          extractivas, las actividades agropecuarias y el rápido crecimiento urbano, ha permitido que los humanos
+          reflexionen frente a las diferentes prácticas y que con ayuda de diferentes organizaciones se contemple la
+          recuperación del espacio hasta el día de hoy. Por esto, el reconocer nuestros humedales como aquella fuente de
+          vida para diferentes organismos que hacen parte de la diversidad ecosistémica de Bogotá y Colombia es
+          importante.<br><br>
+          A continuación encontraras el nombre de los quince humedales reconocidos en Bogotá:<br>
+          Humedal La Conejera<br>Humedal Santa María del Lago<br>Humedal Torca – Guaymaral<br>Humedal El
+          Salitre<br>Humedal El Tunjo<br>Humedal La Isla<br>Humedal Córdoba<br>Humedal Juan Amarillo o
+          Tibabuyes<br>Humedal Jaboque.<br>Humedal El Burro<br>Humedal La Vaca o Techovita<br>Humedal de
+          Techo<br>Humedal Capellanía<br>Humedal Meandro del Say<br>Humedal Tibanica<br>
+        </p>
+
+
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 subtitulo" id="humedal_sumapaz"><strong>Humedales en Páramo de Sumapaz</strong></div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/hParamo_Sumapaz.jpg') }}" alt="humedal_conejera" class="imginteractivo">
+      </div>
+      <div class="col-md-6 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/hParamo_Sumapaz2.jpg') }}" alt="humedal_guaymaral"
+          class="imginteractivo">
+      </div>
+      <div class="col-md-12">
+        <p class="textleft">Este páramo es el más grande del mundo y alberga una gran cantidad de humedales, como
+          lagunas, ciénagas y turberas. Estos humedales son de gran importancia para la regulación del clima y la
+          provisión de agua para Bogotá y otras ciudades de la región. </p>
+
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 subtitulo"id="humedal_sumapaz" ><strong>Laguna de Fúquene</strong></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-8 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/Fuquene1.avif') }}" alt="humedal_funquene" class="imginteractivo"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-12">
+        <p class="textleft">Esta laguna es la más grande de Cundinamarca y es un importante sitio para la observación de
+          aves. La laguna también es una fuente de agua para la agricultura y la pesca. </p>
+
+        <br>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-8 ">
+        <p><strong>Algunos humedales más importantes de Boyaca son: </strong> </p>
+        <br>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-4 " id="humedal_tota"><img src="{{ url_for('static', filename='images/ECOSISTEMAS/Tota.jpg') }}" alt="humedal_lago_tota" class="imginteractivo"></div>
+      <div class="col-md-8 ">
+        <p class="textleft subtitulo"><strong> Lago de Tota </strong><br></p>
+        <p class="textleft">Tota, es declarado como humedal más grande de Colombia y es un importante sitio para la
+          observación de aves
+          y la práctica
+          de deportes acuáticos. El lago también es una fuente de agua para la agricultura y la pesca.</p>
+      </div>
+      <div class="col-md-12"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 " id="humedal_palagua"><img src="{{ url_for('static', filename='images/ECOSISTEMAS/PALAGUA.png') }}" alt="cienaga_palagua" class="imginteractivo"></div>
+      <div class="col-md-8 ">
+        <p class="textleft subtitulo"><strong> Ciénaga de Palagua </strong><br></p>
+        <p class="textleft">Esta ciénaga es un importante sitio para la reproducción de aves y peces. La ciénaga también
+          es una fuente de agua para la agricultura y la ganadería.</p>
+      </div>
+      <div class="col-md-12"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" ><img src="{{ url_for('static', filename='images/ECOSISTEMAS/sochagota.jpg') }}" alt="cienaga_palagua" class="imginteractivo"></div>
+      <div class="col-md-8 ">
+        <p class="textleft subtitulo"><strong> Laguna de Sochagota </strong><br></p>
+        <p class="textleft">Esta laguna es un importante sitio para la observación de aves y la práctica de pesca
+          deportiva. La laguna también es una fuente de agua para la agricultura y la ganadería.</p>
+      </div>
+      <div class="col-md-12"></div>
+    </div>
+
+
+    <hr>
+
+
+    <div class="row" id="RIOS">
+      <div class="col-md-12"><strong>
+          <h2> RIOS </h2>
+        </strong> </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <p class="parrafo1">Los departamentos de Cundinamarca y Boyacá, en Colombia, albergan una gran diversidad de
+          ecosistemas fluviales, cada uno con características únicas y una rica biodiversidad. Entre los principales
+          ecosistemas de ríos en estas regiones se encuentran:
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="textleft subtitulo"><strong>Río Bogotá</strong></p>
+      </div>
+      <div class="col-md-4">
+        <p class="textleft">Nace en el páramo de Guacheneque, en Villapinzón, y recorre 380 km hasta desembocar en el
+          río Magdalena. Atraviesa diversos ecosistemas, incluyendo páramos, bosques altoandinos, subandinos y
+          tropicales, y humedales.
+        </p>
+      </div>
+      <div class="col-md-8 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/Rio_Bogota.png') }}" alt="bosque_altoandino" class="imginteractivo">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" id="rio_chicamocha">
+        <p class="textleft subtitulo"><strong>Río Chicamocha</strong></p>
+      </div>
+      <div class="col-md-4">
+        <p class="textleft">Nace en el Páramo de Rabanal, en Boyacá, y recorre 230 km hasta desembocar en el río Bogotá.
+          Es un río de alta montaña, con aguas frías y cristalinas, que alberga una gran variedad de peces y anfibios.
+        </p>
+      </div>
+      <div class="col-md-8 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/rio_chicamocha.jpg') }}" alt="bosque_altoandino" class="imginteractivo">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" id="rio_suarez">
+        <p class="textleft subtitulo"><strong>Río Suárez</strong></p>
+      </div>
+      <div class="col-md-4">
+        <p class="textleft">Nace en el Páramo de Suta, en Boyacá, y recorre 290 km hasta desembocar en el río Magdalena.
+          Es el segundo río más largo de Colombia, después del Magdalena, y es conocido por sus rápidos y cascadas.
+        </p>
+      </div>
+      <div class="col-md-8 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/RioSuarez.jpg') }}" alt="bosque_altoandino" class="imginteractivo">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12"  id="rio_neusa">
+        <p class="textleft subtitulo"><strong>Río Neusa</strong></p>
+      </div>
+      <div class="col-md-4">
+        <p class="textleft">Nace en el Páramo de Neusa, en Cundinamarca, y recorre 70 km hasta desembocar en el río
+          Bogotá. Es un río de montaña, con aguas frías y cristalinas, que alberga una gran variedad de peces y aves.
+        </p>
+      </div>
+      <div class="col-md-8 "> <img src="{{ url_for('static', filename='images/ECOSISTEMAS/rio-neusa.webp') }}" alt="bosque_altoandino" class="imginteractivo">
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-12"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12"></div>
+    </div>
+
+
+
+
+    <!-- footer -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; 2024 www.Bio_CundiBoyacense.com</p>
+        <ul class="footer-links">
+          <li><a href='/'>Inicio</a></li>
+          <li><a href="#">biocb@facebook.com</a></li>
+          <li><a href="#">biocb@instagram.com</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioCundiBoyacense</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/bio.ico') }}" type="image/x-icon">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfund.css') }}">
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='images/Logo-1.png') }}" alt="logo" />
+        </div>
+
+        <a class="navbar-brand" href='/'>Bio CundiBoyacense</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href='/'>Inicio <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownFun" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Fundaciones
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownFun">
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}">FUNDACION MONTECITO</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#CORPOBOYACA">CORPOBOYACA</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#FUNDACION RED DE ARBOLES">FUNDACION RED DE
+                  ARBOLES</a>
+                <a class="dropdown-item" href="{{ url_for('fundaciones') }}#BIOPARQUE LA RESERVA COTA">BIOPARQUE LA
+                  RESERVA COTA</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEco" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Ecosistemas
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEco">
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}">Páramos</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#BOSQUES">Bosques</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#HUMEDALES">Humedales</a>
+                <a class="dropdown-item" href="{{ url_for('ecosistemas') }}#RIOS">Ríos</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEsp" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Especies
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownEsp">
+                <a class="dropdown-item" href="{{ url_for('especies') }}">MAMIFEROS</a>
+                <a class="dropdown-item" href="{{ url_for('especies') }}#aves">AVES</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href='/#map'>Mapa interactivo</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/estadistica">Estadisticas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/conocenos">Conocenos</a>
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- fin navbar-->
+
+
+    <div class="row">
+      <div class="col-md-12 titulo">BIODIVERSIDAD CUNDIBOYACENSE </div>
+    </div>
+
+
+
+    <!-- Seccion Fundaciones uso de cards -->
+        <br><h1 class="fundaciones">
+          <stron>FUNDACIONES</stron>
+        </h1>
+        <hr>
+        
+        <div class="cards">
+
+          <div class="card">
+            <aside id="FUNDACION_MONTECITO">
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/FUNDACION_MONTECITO.png') }}" alt="">
+
+              <div class="contenido">
+                <h3> FUNDACIÓN MONTECITO</h3>
+                <p> La Fundación Montecito es una entidad sin ánimo de lucro colombiana , creada en 2010 con una
+                  perspectiva cívica y énfasis socio-ambiental. </p>
+                <a class="button" href="https://www.fundacionmontecito.org/inicio" target="_blank"> leer mas</a>
+              </div>
+            </aside>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/FUNDACION_FUNDEPARAMOS.png') }}" alt="">
+            </figure>
+            <div class="contenido">
+              <h3> FUNDEPARAMOS</h3>
+              <p> Fundepáramos es una entidad sin ánimo de lucro, con amplia trayectoria en la promoción, protección y
+                conservación de medio ambiente y sus recursos naturales asociados, bajo un enfoque participativo que
+                permitan el fortalecimiento de las relaciones hombre-naturaleza, que conlleven a relaciones resilientes,
+                de mutuo respeto y dignidad. </p>
+              <a href="https://fundeparamos.org/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/TREBOLA.jpeg') }}" alt="">
+            </figure>
+            <div class="contenido">
+              <h3> TREBOLA</h3>
+              <p> Somos una entidad sin ánimo de lucro, conformada por un equipo de profesionales interdisciplinares;
+                buscamos sensibilizar, concientizar y armonizar la relación del ser humano con la sociedad y el
+                ambiente, mediante mecanismos de educación experiencial, el activismo fortaleciendo los procesos
+                sociales y comunitarios. </p>
+              <a href="https://trebola.org/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <aside id="CORPOBOYACA">
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/CORPOBOYACA.jpg') }}" alt="">
+
+              <div class="contenido">
+                <h3> CORPOBOYACA</h3>
+                <p> Promover y desarrollar la participación comunitaria en actividades y programas de protección
+                  ambiental, de desarrollo sostenible y de manejo adecuado de los recursos naturales renovables </p>
+                <a href="https://www.corpoboyaca.gov.co/" target="_blank"> leer mas</a>
+              </div>
+            </aside>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/SIRAP.png') }}" alt="">
+            </figure>
+            <div class="contenido">
+              <h3> Sistema Regional de Áreas Protegidas </h3>
+              <p> tiene como una estrategia la conservación de ecosistemas estratégicos y las áreas protegidas de la
+                jurisdicción, el cual aporta al fortalecimiento de la estructura ecológica principal (EEP) identificando
+                los ecosistemas estratégicos que aportan servicios ecosistémicos o contribuciones de la naturaleza. </p>
+              <a href="https://www.corpoboyaca.gov.co/sirap/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/CAR.jpg') }}" alt="">
+            </figure>
+            <div class="contenido">
+              <h3> CAR CUNDINAMARCA</h3>
+              <p> Ejecutar, administrar, operar y mantener en coordinación con las entidades territoriales, proyectos,
+                programas de desarrollo sostenible y obras de infraestructura cuya realización sea necesaria para la
+                defensa y protección o para la descontaminación o recuperación del medio ambiente y los recursos
+                naturales renovables. </p>
+              <a href="https://www.car.gov.co/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <aside id="FUNDACION RED DE ARBOLES">
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/RED DE ARBOLES.png') }}" alt="">
+
+              <div class="contenido">
+                <h3> FUNDACION RED DE ARBOLES</h3>
+                <p> La Fundación Red de Árboles nace en el año 2015 tras el deseo de apoyar la conservación de nuestros
+                  ecosistemas y contribuir con la disminución del impacto ambiental que se genera día a día. </p>
+                <a href="https://www.reddearboles.org/" target="_blank"> leer mas</a>
+              </div>
+            </aside>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/PLANETA VIVO.png') }}" alt="">
+            </figure>
+            <div class="contenido">
+              <h3> PLANETA VIVO</h3>
+              <p> La Fundación Planeta Vivo Btá, es una organización de carácter no gubernamental, que ofrece servicios
+                profesionales en medio ambiente, saneamiento básico y obras forestales </p>
+              <a href="https://fundacionplanetavivo.com/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/CERROS BOGOTA.jpeg') }}">
+            </figure>
+            <div class="contenido">
+              <h3> FUNDACION CERROS BOGOTA</h3>
+              <p> El principal propósito de la Fundación es liderar procesos de transformación ciudadana a través de la
+                investigación y acción con la naturaleza en los Cerros Orientales. </p>
+              <a href="https://cerrosdebogota.org/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <aside id="BIOPARQUE LA RESERVA COTA">
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/COTA.png') }}" alt="">
+
+              <div class="contenido">
+                <h3> BIOPARQUE LA RESERVA COTA</h3>
+                <p> Ejecutar, administrar, operar y mantener en coordinación con las entidades territoriales, proyectos,
+                  programas de desarrollo sostenible y obras de infraestructura cuya realización sea necesaria para la
+                  defensa y protección o para la descontaminación o recuperación del medio ambiente y los recursos
+                  naturales renovables. </p>
+                <a href="https://www.bioparquelareserva.com/" target="_blank"> leer mas</a>
+              </div>
+            </aside>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/FUNDACIONES HUMEDALES.jpg') }}" alt="">
+            </figure>
+            <div class="contenido">
+              <h3> FUNDACIONES HUMEDALES</h3>
+              <p> Somos una ONG colombiana fundada en el año 2000 en Bogotá, con el propósito de contribuir a la
+                conservación y manejo de los ecosistemas acuáticos, a partir de un enfoque integral humano y ambiental..
+              </p>
+              <a href="https://fundacionhumedales.org/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="{{ url_for('static', filename='images/FUNDACIONNES/HUMEDALES BOGOTA.jpg') }}" alt="">
+            </figure>
+            <div class="contenido">
+              <h3> FUNDACION HUMEDALES BOGOTA</h3>
+              <p> La Fundación Humedales Bogotá es una organización sin ánimo de lucro dedicada a rescatar las riquezas
+                e importancia de los humedales Bogotanos y a poner en evidencia sus constantes amenazas, trabajo que ha
+                logrado el reconocimiento por parte de los ciudadanos </p>
+              <a href="https://humedalesbogota.com/" target="_blank"> leer mas</a>
+            </div>
+          </div>
+        </div>
+   
+    
+<!-- Fin Seccion Fundaciones -->
+
+
+  
+
+
+
+    <!-- footer -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; 2024 www.Bio_CundiBoyacense.com</p>
+        <ul class="footer-links">
+          <li><a href='/'>Inicio</a></li>
+          <li><a href="#">biocb@facebook.com</a></li>
+          <li><a href="#">biocb@instagram.com</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

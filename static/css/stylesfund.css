@@ -1,0 +1,236 @@
+
+  
+.navbar-nav .nav-link:hover {
+    background-color: #536aee; /* color fondo cuando el cursor pasa por encima*/
+    color: #333;  /*color fuente cuando el cursor pasa por encima*/
+  }
+
+ .navbar {
+  height: 50px; /* Ajusta la altura a lo que necesites */
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
+
+
+.navbar .logo img {
+  height: 50px; /* Ajusta el tamaño del logo */
+  margin: 5px 0; /* Centra el logotipo verticalmente */
+}
+
+/*   
+    .logo {
+    float: left;
+    margin-right: 10px;
+    
+  }
+  
+    .logo img {
+    width: 20%;
+      }
+*/
+
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40 !important; /* Asegura el color de fondo del menú colapsado */
+  }
+}
+
+
+
+      body {
+       
+        padding-top: 56px; /* Ajusta este valor a la altura de tu navbar */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #373B44;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             
+    }
+    
+
+    .container {
+        margin-top: 10px;
+        
+      }
+      
+    .row {
+        background-color: #e9ecef;
+        margin-bottom: 0px;
+        border: none;  /* Elimina el borde */
+        border-bottom: 1px solid transparent; /* Alternativa: hace el borde inferior transparente */
+      }
+    
+    
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    main {
+        flex: 1;
+        padding: 20px;
+    }
+    footer {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-links li {
+        display: inline;
+        margin: 0 10px;
+    }
+    .footer-links a {
+        color: rgb(63, 63, 237);
+        text-decoration: none;
+    }
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+ 
+  
+    .col-md-6,.col-md-7 ,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{
+        background-color: #4286f4;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+ 
+
+
+/* Titulo BIODIVERSIDAD CUNDIBOYACENSE */ 
+      .titulo{
+        background-image: url('../img/bosque1.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        font-weight: bold;
+        /*margin-top: 50px;  Ajusta el valor según el alto del navbar */
+      }
+
+
+
+
+/* Texto salto tequendama  */
+
+.text-overlay {
+  position: absolute;
+  bottom: 22px; /* Ajusta la distancia desde la parte inferior */
+  right: 18px;  /* Ajusta la distancia desde la parte derecha */
+  color: white;
+  font-size: 12px; /* Tamaño pequeño del texto */
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente*/
+  padding: 1px 4px; /* Espaciado alrededor del texto */
+  border-radius: 3px; /* Esquinas redondeadas */
+}
+
+/* hasta aqui codigo index  */
+
+
+
+
+h1 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  
+}
+
+.fundaciones {
+  color: white;
+  text-align: center;
+}
+
+.cards{
+  width: 100%;
+  display: flex;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.card{
+  width: 100%;
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 2);
+  cursor: default;
+  transition: all 400ms ease;
+  margin-bottom: 10px;
+}
+.card:hover{
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 5);
+  transform: translate(-3%);
+}
+
+.card img{
+  width: 50%;
+  padding: 20px;
+  position:inherit;
+
+}
+
+.card .contenido{
+  padding: 15px;
+  text-align: center;
+}
+
+.card .contenido p{
+ line-height: 1.5; /*interlineado*/
+ color: #333;
+}
+
+
+
+
+.card .contenido h3{
+  margin-bottom: 15px;
+}
+
+.card .contenido a{
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  color: aqua;
+  border: 1px solid #536aee;
+  border-radius: 5px;
+  transition: all 400ms ease-in;
+  
+
+}
+
+.card .contenido a:hover{
+  background: aqua;
+  color: #fff;
+
+}
+
+
+
+@media(min-width: 480px){
+  .cards{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:  30px;
+  }
+  .card{
+      display: flex;
+      flex-direction: column;
+  }
+  .card-body{
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+  }
+}
